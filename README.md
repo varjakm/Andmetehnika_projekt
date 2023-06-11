@@ -52,6 +52,8 @@ gdp_per_capita.csv texample row:
 <b>gdp_literacy.csv example value row:</b>
 "Aruba","ABW","Literacy rate, adult total (% of people ages 15 and above)","SE.ADT.LITR.ZS","","",...,'',
 
+For these files, the column names are self-explanatory, however, The World Bank also provided the necessary meta information, the data is available in '*unpacked' folder.
+
 Further, we required another file, which contains a list countries and their corresponding regions and sub-regions. That information is needed for grouping as the analysis progresses.
 Manual option to download at website: 
 https://unstats.un.org/unsd/methodology/m49/overview/
@@ -70,3 +72,35 @@ Important for us: 'Country Name' corresponds to 'name' and 'Country Code' corres
 gdp_per_capita with countries --> df_gdppcap, 
 life_expectancy with countries --> df_lifeexp, 
 literacy with countries --> df_literacy
+
+<i>For detailed data processing understanding, we commented the code.</i>
+
+Important notes regarding processing: due to the nature of datasets, there are many NaN values, essentially data earlier than 1990s is lacking, thus we can look back 30 years.
+Further, literacy data is relatively incomplete, meaning that not for every year literacy values are given. However, to estimate the literacy levels in 2021, we extrapolate the values from a earlier year, when measurements had been cconducted.
+
+Using Python Matplotlib and Seaborn libraries, we did made following graphical representations of the the data:
+Figure 1:
+Scatterplot for GDP per capita vs Literacy rate in 2021, coloring done based on Regions.
+- Strong correlation between country's richness and literacy
+- However, not all countries with high literacy are rich
+- In Africa many countries have low literacy rate and these are poorer as well
+- Europe has very high literacy rate, Americas and Asia are mixed
+Figure 2:
+Line graph, we looked at the progression of GDP per capita over last 30 years, in different sub-regions.
+- Based on that North America and Western Europe are the richest (no surprises)
+- Eastern Asia has gone through rapid progress
+- Eastern Europe has still catching up to do (cought up with Souther Europe)
+- African countries do no show much progress
+Figure 3:
+Scatterplot, GDP per capita vs Life expectancy in 2021 in different sub-regions
+-Strong correlation between country's richness and life expectancy
+Figure 4:
+Similar, as above, GDP per capita vs Life expectancy in 2021 in different European countries, coloring based on regions
+-Again, very strong correlation
+Figure 5:
+Line graph, Estonia specific, GDP per capita progression and life expectancy, over the last 30 years.
+On the same graph two different lines with separate scales are given.
+- From the graph, we can see that people are living longer, as country gets richer
+
+The dataframes we used to make figures, have been also exported as csv files.
+
