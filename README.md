@@ -36,3 +36,10 @@ Literacy:           https://api.worldbank.org/v2/en/indicator/SE.ADT.LITR.ZS?dow
 Our aim was to download *.csv files, however, .zip files where provided by the website. Thus, *.zip files were download and unpacked, a separate folder was each indicator. Following, in each *unpacked folder, the file starting with 'API*' denotes the *.csv file of interest, other two are for meta information.
 However,  the first few rows in 'API*' file contains some extra unnecessary information, which was removed and following that we get three inital files to start working on: gdp_per_capita.csv, life_expectancy.csv, and literacy.csv (these are in the same folder level as file 'projekt.ipynb')
 
+Further, we required another file, which contains a list countries and their corresponding regions and sub-regions. That information is needed for grouping as the analysis progresses.
+Manual option to download at website: 
+https://unstats.un.org/unsd/methodology/m49/overview/
+Or downloadable option:
+https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/raw/master/all/all.csv"
+
+That information is provided by a separate file 'countries.csv'
