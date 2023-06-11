@@ -15,8 +15,8 @@ numpy - for mathemicals operations
 zipfile - to handle zip files
 matplotlib.pyplot and seaborn together for visualization
 '%pip install <library>' command will get the library downloaded and installed, currently commented out.
-4) We carried out additional visualization using commercial PowerBI, ver. ...
-For that we provide a link report link: 
+4) We carried out additional visualization using Microsoft Power BI Desktop, Version: 2.117.984.0 64-bit (May 2023).
+We published the created dashboard into Web as embedded report, with following link: https://app.powerbi.com/view?r=eyJrIjoiMjk3N2YyMDktYmUwYS00MjdlLWFlODEtMzk0NGVkMGRiYjQwIiwidCI6IjM2YTc0ZjA4LTYwMDUtNDA5OS05ZTFjLTg1NDU5ZGFjMjEzZiIsImMiOjh9 
 
 We derived data from The World Bank publicly available repository:
 https://data.worldbank.org/
@@ -103,4 +103,10 @@ On the same graph two different lines with separate scales are given.
 - From the graph, we can see that people are living longer, as country gets richer
 
 The dataframes we used to make figures, have been also exported as csv files.
+
+Using Microsoft Power BI Desktop we created a data model including Country, GDP, Life expectancy and Literacy data. We used Power Query for data transformation - for example unpivot  table to get data into rows per different years for visualization. 
+The final dashboard consists of three different sheets, each has focus on specific data area (GDP, Life expectanxy and Literacy). User can filter data on dashboard either by year, region, sub-region or country. 
+The dashboard compares the average value in the world to user selected value. This allows to compare how specific region or country compares to world average. The bar chart on the left enables to drill-down from region numbers to country level numbers. 
+The tooltip on scatter plot chart displayes the data for selected country, including the location on the map.
+In the left upper corner are displayed the average, minimum and maximum values based on user selection.
 
