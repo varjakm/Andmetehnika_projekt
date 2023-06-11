@@ -65,7 +65,8 @@ name,alpha-2,alpha-3,country-code,iso_3166-2,region,sub-region,intermediate-regi
 Afghanistan,AF,AFG,004,ISO 3166-2:AF,Asia,Southern Asia,"",142,034,""
 
 In that file for each country, given are its name, country codes in different formats and regions, sub-regions and their codes
-Important for us: 'Country Name' corresponds to 'name' and 'Country Code' corresponds to 'alpha-3' column, which permits joining 
+Important for us: 'Country Name' corresponds to 'name' and 'Country Code' corresponds to 'alpha-3' column, which permits joining
+
 gdp_per_capita with countries --> df_gdppcap
 life_expectancy with countries --> df_lifeexp
 literacy with countries --> df_literacy
