@@ -104,9 +104,24 @@ On the same graph two different lines with separate scales are given.
 
 The dataframes we used to make figures, have been also exported as csv files.
 
-Using Microsoft Power BI Desktop we created a data model including Country, GDP, Life expectancy and Literacy data. We used Power Query for data transformation - for example unpivot  table to get data into rows per different years for visualization. 
-The final dashboard consists of three different sheets, each has focus on specific data area (GDP, Life expectanxy and Literacy). User can filter data on dashboard either by year, region, sub-region or country. 
-The dashboard compares the average value in the world to user selected value. This allows to compare how specific region or country compares to world average. The bar chart on the left enables to drill-down from region numbers to country level numbers. 
-The tooltip on scatter plot chart displayes the data for selected country, including the location on the map.
-In the left upper corner are displayed the average, minimum and maximum values based on user selection.
+Using Microsoft Power BI Desktop we created a data model including Country, GDP, Life expectancy and Literacy data. The data model reads data directly from .csv files in github repository. We used Power Query for data transformation - for example unpivot  table to get data into rows per different years for visualization. Example transformation script in M for the "df_gdppcap.csv" file:
+
+let
+    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/varjakm/Andmetehnika_projekt/main/ForPowerBI/df_gdppcap.csv"),[Delimiter=",", Columns=69, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Removed Columns" = Table.RemoveColumns(#"Promoted Headers",{"", "Country Name", "region", "sub-region", "Indicator Name", "Indicator Code"}),
+    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Removed Columns", {"Country Code"}, "Attribute", "Value"),
+    #"Replaced Value" = Table.ReplaceValue(#"Unpivoted Columns",".",",",Replacer.ReplaceText,{"Value"}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"Value", type number}, {"Attribute", type date}}),
+    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Country Code", "Country"}, {"Attribute", "Year"}})
+in
+    #"Renamed Columns"
+
+The final dashboard consists of three different sheets, each has focus on specific data area (GDP, Life expectancy and Literacy). User can navigate between sheets using navigation buttons on dashbboard header.
+The whole dashboard can be filtered using filters on the right side of the dashboard where are visible filters for year, region, sub-region and country.
+In the left upper corner of the dashboard are displayed the average, minimum and maximum values as dynamic fact boxes based on user selection.
+The main visual on dashboard compares the average value in the world to user selected value. This allows to compare how specific region or country compares to the world average and how numbers have changed over time.
+The scatter plot visual on bottom of the dashboard shows the correlation of selected life expectancy or literacy to GDP. The tooltip on selected dataooint displays information about county and it's location on the map.
+The bar chart visual on the left enables to drill-down from region numbers to country level numbers. 
+
 
