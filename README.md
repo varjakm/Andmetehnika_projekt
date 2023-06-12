@@ -151,3 +151,5 @@ The bar chart visual on the left enables to drill-down from region numbers to co
 
 PowerBI visualization available at:
 https://app.powerbi.com/view?r=eyJrIjoiMjk3N2YyMDktYmUwYS00MjdlLWFlODEtMzk0NGVkMGRiYjQwIiwidCI6IjM2YTc0ZjA4LTYwMDUtNDA5OS05ZTFjLTg1NDU5ZGFjMjEzZiIsImMiOjh9 
+
+We also added PowerBI file: AndmetehnikaProjekt.pbix
