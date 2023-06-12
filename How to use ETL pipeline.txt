@@ -1,0 +1,37 @@
+Software information, only a single code file: 'projekt.ipynb'
+1) The code was written in *.ipynb format using Visual Studio Code, ver. 1.79.0
+2) The code is running on Python, ver. 3.11.3
+3) Necessary additional libraries for the project are:
+requests - to carry out web requests
+pandas - to handle dataframes
+numpy - for mathemicals operations
+zipfile - to handle zip files
+matplotlib.pyplot and seaborn together for visualization
+And os to manage folders and files
+If required, '%pip install <library>' command will get the library downloaded and installed, currently commented out
+
+Running the program will lead to download of files from:
+https://data.worldbank.org/indicator
+More specifically:
+i) GDP per capita:     https://api.worldbank.org/v2/en/indicator/NY.GDP.PCAP.PP.CD?downloadformat=csv
+
+ii) Life expectancy:    https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=csv
+
+iii) Literacy:           https://api.worldbank.org/v2/en/indicator/SE.ADT.LITR.ZS?downloadformat=csv
+
+Additional file is download for countries and their (sub)-regions:
+https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/raw/master/all/all.csv
+
+
+Running the program requires no input from the user, all the necessary files are downloaded, unzipped if needed and
+converted to dataframes using Pandas library. Pandas is also used to handle dataframes to produce inputs for visualization.
+Visualizations done with Matlplotlib and its expansion Seaborn.
+
+
+However, no code is for Microsoft PowerBI, Version: 2.117.984.0 64-bit (May 2023), this process was done to 
+demonstrate a different and more powerful visualization tool that can be used for data. The same files that were used
+with Python, were also used for PowerBI. Short description for PowerBI usage has been given in ReadME file. We also
+provide a PowerBI file itself: AndmetehnikaProjekt.pbix. Its usage requires properiarty software and purchase of the
+lisense. Its results can be seen here:
+https://app.powerbi.com/view?r=eyJrIjoiMjk3N2YyMDktYmUwYS00MjdlLWFlODEtMzk0NGVkMGRiYjQwIiwidCI6IjM2YTc0ZjA4LTYwMDUtNDA5OS05ZTFjLTg1NDU5ZGFjMjEzZiIsImMiOjh9 
+

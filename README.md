@@ -15,7 +15,7 @@ pandas - to handle dataframes
 numpy - for mathemicals operations
 zipfile - to handle zip files
 matplotlib.pyplot and seaborn together for visualization
-'%pip install <library>' command will get the library downloaded and installed, currently commented out.
+'%pip install <library>' command will get the library downloaded and installed, currently commented out
 4) We carried out additional visualization using Microsoft Power BI Desktop, Version: 2.117.984.0 64-bit (May 2023).
 We published the created dashboard into Web as embedded report, with following link: https://app.powerbi.com/view?r=eyJrIjoiMjk3N2YyMDktYmUwYS00MjdlLWFlODEtMzk0NGVkMGRiYjQwIiwidCI6IjM2YTc0ZjA4LTYwMDUtNDA5OS05ZTFjLTg1NDU5ZGFjMjEzZiIsImMiOjh9 
 
@@ -59,7 +59,7 @@ Further, we required another file, which contains a list countries and their cor
 Manual option to download at website: 
 https://unstats.un.org/unsd/methodology/m49/overview/
 Or downloadable option via python:
-https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/raw/master/all/all.csv"
+https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/raw/master/all/all.csv
 
 That information is provided by a separate file 'countries.csv':
 <b>countries.csv top row:</b>
