@@ -76,9 +76,9 @@ literacy with countries --> df_literacy
 <i>For detailed data processing understanding, we commented the code.</i>
 
 Important notes regarding processing: due to the nature of datasets, there are many NaN values, essentially data earlier than 1990s is lacking, thus we can look back 30 years.
-Further, literacy data is relatively incomplete, meaning that not for every year literacy values are given. However, to estimate the literacy levels in 2021, we extrapolate the values from a earlier year, when measurements had been cconducted.
+Further, literacy data is relatively incomplete, meaning that not for every year literacy values are given. However, to estimate the literacy levels in 2021, we extrapolate the values from a earlier year, when measurements had been conducted.
 
-Using Python Matplotlib and Seaborn libraries, we did made following graphical representations of the the data:
+Using Python Matplotlib and Seaborn libraries, we made following graphical representations of the the data:
 Figure 1:
 Scatterplot for GDP per capita vs Literacy rate in 2021, coloring done based on Regions.
 - Strong correlation between country's richness and literacy
@@ -90,7 +90,7 @@ Line graph, we looked at the progression of GDP per capita over last 30 years, i
 - Based on that North America and Western Europe are the richest (no surprises)
 - Eastern Asia has gone through rapid progress
 - Eastern Europe has still catching up to do (cought up with Souther Europe)
-- African countries do no show much progress
+- African countries do not show much progress
 Figure 3:
 Scatterplot, GDP per capita vs Life expectancy in 2021 in different sub-regions
 -Strong correlation between country's richness and life expectancy
@@ -134,7 +134,7 @@ In the left upper corner of the dashboard are displayed the average, minimum and
 
 The main visual on dashboard compares the average value in the world to user selected value. This allows to compare how specific region or country compares to the world average and how numbers have changed over time.
 
-The scatter plot visual on bottom of the dashboard shows the correlation of selected life expectancy or literacy to GDP. The tooltip on selected dataooint displays information about county and it's location on the map.
+The scatter plot visual on bottom of the dashboard shows the correlation of selected life expectancy or literacy to GDP. The tooltip on selected datapoint displays information about county and it's location on the map.
 
 The bar chart visual on the left enables to drill-down from region numbers to country level numbers. 
 
