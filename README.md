@@ -5,6 +5,7 @@ Authored by:
 2) Margus Varjak
 3) Fred Väärtnõu
 
+
 Software information, only a single file for code: 'projekt.ipynb'
 1) The code was written in *.ipynb format using Visual Studio Code, ver. 1.79.0
 2) The code is running on Python, ver. 3.11.3
