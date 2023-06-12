@@ -57,7 +57,7 @@ For these files, the column names are self-explanatory, however, The World Bank 
 Further, we required another file, which contains a list countries and their corresponding regions and sub-regions. That information is needed for grouping as the analysis progress.
 Manual option to download at website: 
 https://unstats.un.org/unsd/methodology/m49/overview/
-Or downloadable option:
+Or downloadable option via python:
 https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/raw/master/all/all.csv"
 
 That information is provided by a separate file 'countries.csv':
@@ -67,7 +67,7 @@ name,alpha-2,alpha-3,country-code,iso_3166-2,region,sub-region,intermediate-regi
 Afghanistan,AF,AFG,004,ISO 3166-2:AF,Asia,Southern Asia,"",142,034,""
 
 In that file for each country, given are its name, country codes in different formats and regions, sub-regions and their codes
-Important for us: 'Country Name' corresponds to 'name' and 'Country Code' corresponds to 'alpha-3' column, which permits joining
+Important for us: 'Country Name' corresponds to 'name' and 'Country Code' corresponds to 'alpha-3' column, which permits joining to get dataframes: 
 
 gdp_per_capita with countries --> df_gdppcap, 
 life_expectancy with countries --> df_lifeexp, 
@@ -75,34 +75,39 @@ literacy with countries --> df_literacy
 
 <i>For detailed data processing understanding, we commented the code.</i>
 
-Important notes regarding processing: due to the nature of datasets, there are many NaN values, essentially data earlier than 1990s is lacking, thus we can look back 30 years.
+Important notes regarding processing: due to the nature of datasets, there are many NaN values, essentially data earlier than 1990s is lacking, thus we can look back 30 years only.
 Further, literacy data is relatively incomplete, meaning that not for every year literacy values are given. However, to estimate the literacy levels in 2021, we extrapolate the values from a earlier year, when measurements had been conducted.
 
 Using Python Matplotlib and Seaborn libraries, we made following graphical representations of the the data:
 Figure 1:
+Used dataframe: df_gdppcap_literacy_2021
 Scatterplot for GDP per capita vs Literacy rate in 2021, coloring done based on Regions.
 - Strong correlation between country's richness and literacy
 - However, not all countries with high literacy are rich
 - In Africa many countries have low literacy rate and these are poorer as well
 - Europe has very high literacy rate, Americas and Asia are mixed
 Figure 2:
+Used dataframe: df_gdppcap
 Line graph, we looked at the progression of GDP per capita over last 30 years, in different sub-regions.
 - Based on that North America and Western Europe are the richest (no surprises)
 - Eastern Asia has gone through rapid progress
 - Eastern Europe has still catching up to do (cought up with Souther Europe)
 - African countries do not show much progress
 Figure 3:
+Used dataframe: life_expectancy_GDPCAP_df
 Scatterplot, GDP per capita vs Life expectancy in 2021 in different sub-regions
 -Strong correlation between country's richness and life expectancy
 Figure 4:
+Used dataframe: df_lifeexp_gdppcap_2021
 Similar, as above, GDP per capita vs Life expectancy in 2021 in different European countries, coloring based on regions
 -Again, very strong correlation
 Figure 5:
+Used dataframe: df_estonia
 Line graph, Estonia specific, GDP per capita progression and life expectancy, over the last 30 years.
 On the same graph two different lines with separate scales are given.
 - From the graph, we can see that people are living longer, as country gets richer
 
-The dataframes we used to make figures, have been also exported as csv files.
+The dataframes we used to make figures, have been also exported as csv files to a folder named "ForPowerBI", from there we used df_gdpcap.csv, df_lifeexp.csv, df_literacy.csv for data visualization in PowerBI.
 
 Using Microsoft Power BI Desktop we created a data model including Country, GDP, Life expectancy and Literacy data. The data model reads data directly from .csv files in github repository. We used Power Query for data transformation - for example unpivot  table to get data into rows per different years for visualization. Example transformation script in M for the "df_gdppcap.csv" file:
 
@@ -139,3 +144,5 @@ The scatter plot visual on bottom of the dashboard shows the correlation of sele
 The bar chart visual on the left enables to drill-down from region numbers to country level numbers. 
 
 
+PowerBI visualization available at:
+https://app.powerbi.com/view?r=eyJrIjoiMjk3N2YyMDktYmUwYS00MjdlLWFlODEtMzk0NGVkMGRiYjQwIiwidCI6IjM2YTc0ZjA4LTYwMDUtNDA5OS05ZTFjLTg1NDU5ZGFjMjEzZiIsImMiOjh9 
