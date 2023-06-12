@@ -33,7 +33,7 @@ Literacy:           https://api.worldbank.org/v2/en/indicator/SE.ADT.LITR.ZS?dow
 
 <i>Remark: there are numerous other indicators available as well, for climate, agriculture, energy, health. </i>
 
-Our aim was to download *.csv files, however, .zip files where provided by the website. Thus, *.zip files were download and unpacked, a separate folder was each indicator. Following, in each *unpacked folder, the file starting with 'API*' denotes the *.csv file of interest, other two are for meta information.
+Our aim was to download *.csv files, however, .zip files where provided by the website. Thus, *.zip files were download and unpacked, a separate folder was made for each indicator. Following, in each *unpacked folder, the file starting with 'API*' denotes the *.csv file of interest, other two are for meta information.
 However,  the first few rows in 'API*' file contains some extra unnecessary information, which was removed and following that we get three inital files to start working on: gdp_per_capita.csv, life_expectancy.csv, and literacy.csv (these are in the same folder level as file 'projekt.ipynb')
 
 <b>gdp_per_capita.csv top row:</b>
@@ -72,8 +72,8 @@ Important for us: 'Country Name' corresponds to 'name' and 'Country Code' corres
 gdp_per_capita with countries --> df_gdppcap, 
 life_expectancy with countries --> df_lifeexp, 
 literacy with countries --> df_literacy
-
-These dataframes also exported as csv files to folder 'PowerBI'
+These dataframes exported as csv files to folder 'PowerBI'
+These dataframes were also exported as csv to folder 'Dataframes_as_CSV'
 
 <i>For detailed data processing understanding, we commented the code.</i>
 
@@ -109,11 +109,8 @@ Line graph, Estonia specific, GDP per capita progression and life expectancy, ov
 On the same graph two different lines with separate scales are given.
 - From the graph, we can see that people are living longer, as country gets richer
 
-The dataframes we used to make figures, have been also exported as csv files to a folder named "ForPowerBI".
-
-
+The dataframes we used to make figures, have been also exported as csv files to a folder named "Dataframes_as_CSV".
 From there we used df_gdpcap.csv, df_lifeexp.csv, df_literacy.csv for data visualization in PowerBI.
-
 Using Microsoft Power BI Desktop we created a data model including Country, GDP, Life expectancy and Literacy data. The data model reads data directly from .csv files in github repository. We used Power Query for data transformation - for example unpivot  table to get data into rows per different years for visualization. Example transformation script in M for the "df_gdppcap.csv" file:
 
 let
