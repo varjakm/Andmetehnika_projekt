@@ -73,6 +73,8 @@ gdp_per_capita with countries --> df_gdppcap,
 life_expectancy with countries --> df_lifeexp, 
 literacy with countries --> df_literacy
 
+These dataframes also exported as csv files to folder 'PowerBI'
+
 <i>For detailed data processing understanding, we commented the code.</i>
 
 Important notes regarding processing: due to the nature of datasets, there are many NaN values, essentially data earlier than 1990s is lacking, thus we can look back 30 years only.
@@ -107,7 +109,10 @@ Line graph, Estonia specific, GDP per capita progression and life expectancy, ov
 On the same graph two different lines with separate scales are given.
 - From the graph, we can see that people are living longer, as country gets richer
 
-The dataframes we used to make figures, have been also exported as csv files to a folder named "ForPowerBI", from there we used df_gdpcap.csv, df_lifeexp.csv, df_literacy.csv for data visualization in PowerBI.
+The dataframes we used to make figures, have been also exported as csv files to a folder named "ForPowerBI".
+
+
+From there we used df_gdpcap.csv, df_lifeexp.csv, df_literacy.csv for data visualization in PowerBI.
 
 Using Microsoft Power BI Desktop we created a data model including Country, GDP, Life expectancy and Literacy data. The data model reads data directly from .csv files in github repository. We used Power Query for data transformation - for example unpivot  table to get data into rows per different years for visualization. Example transformation script in M for the "df_gdppcap.csv" file:
 
