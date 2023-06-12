@@ -20,7 +20,7 @@ We published the created dashboard into Web as embedded report, with following l
 
 We derived data from The World Bank publicly available repository:
 https://data.worldbank.org/
-There are one can chose data that is available for a sepcific country or focus on a particular indicator
+One can choose data that is available for a sepcific country or focus on a particular indicator
 We chose indicators:
 https://data.worldbank.org/indicator
 
@@ -54,7 +54,7 @@ gdp_per_capita.csv texample row:
 
 For these files, the column names are self-explanatory, however, The World Bank also provided the necessary meta information, the data is available in '*unpacked' folder.
 
-Further, we required another file, which contains a list countries and their corresponding regions and sub-regions. That information is needed for grouping as the analysis progresses.
+Further, we required another file, which contains a list countries and their corresponding regions and sub-regions. That information is needed for grouping as the analysis progress.
 Manual option to download at website: 
 https://unstats.un.org/unsd/methodology/m49/overview/
 Or downloadable option:
